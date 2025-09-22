@@ -7,6 +7,7 @@ import Contactus from "./components/Contactus";
 import Properties from "./components/Properties";
 import AboutUs from "./components/Aboutus";
 import PayRent from "./components/Payrent";
+import Servicess from "./components/servicess/Services";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/properties" element={<Properties />} />
          <Route path="/aboutus" element={<AboutUs/>} />
           <Route path="/payrent" element={<PayRent/>} />
+        <Route path="/services" element={<Servicess />} />
       </Routes>
       <Footer />
     </Router>
