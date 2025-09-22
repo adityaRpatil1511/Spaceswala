@@ -1,42 +1,52 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { HomeIcon, ShieldCheckIcon, UsersIcon, BuildingOffice2Icon, StarIcon } from "@heroicons/react/24/solid";
 import { Link } from "react-router-dom";
+import { BedDouble, Bath, Ruler, ShieldCheck, Users, Building2 } from "lucide-react";
+
+// Import local images
+import img1 from "../assets/home/img1.jpg";
+import img2 from "../assets/home/img2.jpg";
+import img3 from "../assets/home/img3.png";
+import img4 from "../assets/home/img4.png";
+import img5 from "../assets/home/img5.png";
 
 const Home = () => {
   return (
-    <div id="home" className="w-full">
+    <div id="home" className="w-full font-sans">
       {/* Hero Section */}
       <section
-        className="relative bg-cover bg-center h-[90vh] flex items-center justify-center text-center"
+        className="relative h-screen flex items-center justify-center text-center"
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1920&q=80')",
+          backgroundImage: `url(${img1})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80"></div>
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="relative z-10 text-white px-4 sm:px-6 lg:px-8"
+          className="relative z-10 text-white max-w-3xl px-6"
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-            Find Your Dream Home with <span className="text-teal-400">Spaceswala</span>
+          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-lg">
+            Discover Your Perfect{" "}
+            <span className="text-teal-400">Dream Home</span>
           </h1>
-          <p className="mt-4 text-base sm:text-lg md:text-xl max-w-2xl mx-auto">
-            Premium residential and commercial properties tailored to your lifestyle with trusted experts guiding every step.
+          <p className="mt-6 text-lg md:text-xl opacity-90">
+            Explore luxury villas, modern apartments, and prime commercial
+            spaces designed for your lifestyle.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/properties"
-              className="bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-lg shadow-lg font-semibold transition transform hover:scale-105"
+              className="px-8 py-3 rounded-full font-semibold shadow bg-teal-600 hover:bg-teal-700 transition text-white"
             >
               Explore Properties
             </Link>
             <Link
               to="/contact"
-              className="bg-white hover:bg-gray-200 text-teal-600 px-6 py-3 rounded-lg shadow-lg font-semibold transition transform hover:scale-105"
+              className="px-8 py-3 rounded-full font-semibold shadow bg-gray-200 hover:bg-gray-300 text-gray-800 transition"
             >
               Contact Us
             </Link>
@@ -45,251 +55,218 @@ const Home = () => {
       </section>
 
       {/* Search Bar */}
-      <motion.section
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="max-w-4xl mx-auto -mt-12 bg-white shadow-lg rounded-lg p-4 sm:p-6 md:p-6 relative z-20"
-      >
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
-          <input type="text" placeholder="Location" className="border p-3 rounded-lg w-full" />
-          <input type="text" placeholder="Property Type" className="border p-3 rounded-lg w-full" />
-          <input type="text" placeholder="Budget" className="border p-3 rounded-lg w-full" />
-          <button className="bg-teal-500 hover:bg-teal-600 text-white font-semibold rounded-lg p-3 w-full sm:w-auto">
-            Search
-          </button>
-        </div>
-      </motion.section>
-{/* Featured Properties - Stunning Version */}
-{/* Featured Properties - Stunning Version */}
-{/* Featured Properties - Stunning Version */}
-<section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-12">
-    Featured <span className="text-teal-500">Properties</span>
-  </h2>
-  <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
-    {[
-      {
-        title: "Luxury Villa",
-        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHvaeWf6GmXjSpLUTpRabNxwPYCxLK3vVO9A&s",
-        desc: "Beautiful villa with modern interiors and private pool.",
-        price: "₹2,50,00,000",
-        beds: 4,
-        baths: 3,
-        area: "4500 sqft",
-        badge: "New",
-      },
-      {
-        title: "Modern Apartment",
-        img: "https://images.unsplash.com/photo-1599423300746-b62533397364?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg5OXwwfDF8c2VhcmNofDkwfHxtb2Rlcm4lMjBhcHBhcnRtZW50fGVufDB8fHx8fDE2NTY2NjYwNjk&ixlib=rb-1.2.1&q=80&w=1080",
-        desc: "Stylish apartment in the heart of the city with skyline views.",
-        price: "₹1,20,00,000",
-        beds: 3,
-        baths: 2,
-        area: "1800 sqft",
-        badge: "Hot",
-      },
-      {
-        title: "Commercial Space",
-        img: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg5OXwwfDF8c2VhcmNofDk2fHxtb2Rlcm4lMjBhY2NvbW1vZGF0aW9ufGVufDB8fHx8fDE2NTY2NjYwNjk&ixlib=rb-1.2.1&q=80&w=1080",
-        desc: "Prime commercial space perfect for offices and retail.",
-        price: "₹5,00,00,000",
-        beds: 0,
-        baths: 2,
-        area: "6000 sqft",
-        badge: "Featured",
-      },
-    ].map((property, i) => (
-      <motion.div
-        key={i}
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: i * 0.2 }}
-        viewport={{ once: true }}
-        className="relative group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all"
-      >
-        {/* Property Image */}
-        <img
-          src={property.img}
-          alt={property.title}
-          className="w-full h-64 sm:h-72 md:h-80 object-cover transition-transform duration-500 group-hover:scale-110"
-        />
-
-        {/* Badge */}
-        <span className="absolute top-4 left-4 bg-teal-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
-          {property.badge}
+     {/* Search Bar */}
+<motion.section
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.7 }}
+  viewport={{ once: true }}
+  className="relative z-20 -mt-16 max-w-6xl mx-auto px-6"
+>
+  <div className="backdrop-blur-lg bg-white/20 border border-white/30 shadow-2xl rounded-3xl p-6">
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+      {/* Location Input */}
+      <div className="relative">
+        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">
+          📍
         </span>
+        <input
+          type="text"
+          placeholder="Location"
+          className="pl-10 p-3 rounded-full border border-gray-200 focus:ring-2 focus:ring-teal-400 w-full bg-white/60 placeholder-gray-600"
+        />
+      </div>
 
-        {/* Overlay on Hover */}
-        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col justify-center items-center text-white p-5 text-center">
-          <h3 className="text-xl font-bold">{property.title}</h3>
-          <p className="mt-2 text-sm">{property.desc}</p>
-          <p className="mt-3 font-semibold">{property.price}</p>
-          <div className="mt-2 flex justify-center gap-4 text-sm">
-            {property.beds > 0 && <span>🛏 {property.beds} Beds</span>}
-            {property.baths > 0 && <span>🛁 {property.baths} Baths</span>}
-            <span>📐 {property.area}</span>
-          </div>
-          <button className="mt-4 bg-teal-500 hover:bg-teal-600 px-6 py-2 rounded-lg font-semibold transition transform hover:scale-105">
-            View Details
-          </button>
-        </div>
-      </motion.div>
-    ))}
+      {/* Property Type Input */}
+      <div className="relative">
+        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">
+          🏠
+        </span>
+        <input
+          type="text"
+          placeholder="Property Type"
+          className="pl-10 p-3 rounded-full border border-gray-200 focus:ring-2 focus:ring-teal-400 w-full bg-white/60 placeholder-gray-600"
+        />
+      </div>
+
+      {/* Budget Input */}
+      <div className="relative">
+        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">
+          💰
+        </span>
+        <input
+          type="text"
+          placeholder="Budget"
+          className="pl-10 p-3 rounded-full border border-gray-200 focus:ring-2 focus:ring-teal-400 w-full bg-white/60 placeholder-gray-600"
+        />
+      </div>
+
+      {/* Search Button */}
+      <button className="bg-gradient-to-r from-teal-500 to-blue-500 hover:from-teal-600 hover:to-blue-600 text-white font-semibold rounded-full p-3 transition transform hover:scale-105 shadow-lg">
+        🔍 Search
+      </button>
+    </div>
   </div>
-</section>
+</motion.section>
 
 
-
-
-      {/* Why Choose Us - Modern */}
-      <section className="bg-gradient-to-r from-gray-50 to-gray-100 py-16 sm:py-20">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12">
-          Why Choose <span className="text-teal-500">Spaceswala</span>?
+      {/* Featured Properties */}
+      <section className="max-w-7xl mx-auto px-6 py-20">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-14">
+          Featured <span className="text-teal-500">Properties</span>
         </h2>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid gap-8 sm:gap-10 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {[
             {
-              icon: <HomeIcon className="w-14 h-14 text-white p-3 bg-teal-500 rounded-full mx-auto" />,
-              title: "Extensive Property Options",
-              desc: "Access a wide range of premium and budget-friendly properties tailored to your needs.",
+              title: "Luxury Villa",
+              img: img2,
+              desc: "Beautiful villa with modern interiors and private pool.",
+              price: "₹2,50,00,000",
+              beds: 4,
+              baths: 3,
+              area: "4500 sqft",
+              badge: "New",
             },
             {
-              icon: <ShieldCheckIcon className="w-14 h-14 text-white p-3 bg-teal-500 rounded-full mx-auto" />,
-              title: "Trusted & Verified",
-              desc: "Every listing is verified and secure, giving you peace of mind in your investment.",
+              title: "Modern Apartment",
+              img: img3,
+              desc: "Stylish apartment in the heart of the city with skyline views.",
+              price: "₹1,20,00,000",
+              beds: 3,
+              baths: 2,
+              area: "1800 sqft",
+              badge: "Hot",
             },
             {
-              icon: <UsersIcon className="w-14 h-14 text-white p-3 bg-teal-500 rounded-full mx-auto" />,
-              title: "Expert Guidance",
-              desc: "Professional advisors guide you at every step to make your property journey hassle-free.",
+              title: "Commercial Space",
+              img: img4,
+              desc: "Prime commercial space perfect for offices and retail.",
+              price: "₹5,00,00,000",
+              beds: 0,
+              baths: 2,
+              area: "6000 sqft",
+              badge: "Featured",
             },
-            {
-              icon: <StarIcon className="w-14 h-14 text-white p-3 bg-teal-500 rounded-full mx-auto" />,
-              title: "Customer Satisfaction",
-              desc: "Thousands of happy clients have found their dream homes with our dedicated team.",
-            },
-          ].map((item, i) => (
+          ].map((property, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: i * 0.2 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-2xl transform hover:-translate-y-3 transition-all"
+              className="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all"
             >
-              {item.icon}
-              <h3 className="text-xl sm:text-2xl font-semibold mt-5">{item.title}</h3>
-              <p className="text-gray-600 mt-3">{item.desc}</p>
-              <div className="mt-5 w-12 h-1 bg-teal-500 rounded-full"></div>
+              {/* Property Image */}
+              <div className="overflow-hidden">
+                <img
+                  src={property.img}
+                  alt={property.title}
+                  className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+
+              {/* Badge */}
+              <span className="absolute top-4 left-4 bg-teal-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow">
+                {property.badge}
+              </span>
+
+              {/* Content */}
+              <div className="p-6">
+                <h3 className="text-xl font-bold">{property.title}</h3>
+                <p className="text-gray-600 mt-2 text-sm">{property.desc}</p>
+                <p className="mt-3 text-teal-600 font-semibold">
+                  {property.price}
+                </p>
+                <div className="mt-4 flex items-center gap-6 text-sm text-gray-700">
+                  {property.beds > 0 && (
+                    <span className="flex items-center gap-1">
+                      <BedDouble size={16} /> {property.beds} Beds
+                    </span>
+                  )}
+                  {property.baths > 0 && (
+                    <span className="flex items-center gap-1">
+                      <Bath size={16} /> {property.baths} Baths
+                    </span>
+                  )}
+                  <span className="flex items-center gap-1">
+                    <Ruler size={16} /> {property.area}
+                  </span>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-16 sm:py-20 bg-white">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-12">
-          What Our <span className="text-teal-500">Clients Say</span>
-        </h2>
-        <div className="max-w-5xl mx-auto grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 px-4 sm:px-6">
-          {[
-            {
-              name: "Amit Sharma",
-              feedback: "Spaceswala helped me find my dream home quickly and hassle-free!",
-            },
-            {
-              name: "Priya Verma",
-              feedback: "Professional and transparent service. Highly recommend!",
-            },
-            {
-              name: "Rahul Mehta",
-              feedback: "Amazing selection of properties and very supportive staff.",
-            },
-          ].map((t, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30, scale: 0.8 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.5, delay: i * 0.2 }}
-              viewport={{ once: true }}
-              className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transform hover:-translate-y-2 transition"
-            >
-              <p className="text-gray-700 italic">“{t.feedback}”</p>
-              <h4 className="mt-4 font-semibold text-teal-600">{t.name}</h4>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* Our Services */}
-      <section className="py-16 sm:py-20 bg-gray-50">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-12">
-          Our <span className="text-teal-500">Services</span>
-        </h2>
-        <div className="max-w-6xl mx-auto grid gap-6 sm:gap-8 md:grid-cols-3 px-4 sm:px-6">
-          {[
-            {
-              icon: <BuildingOffice2Icon className="w-12 h-12 mx-auto text-teal-500" />,
-              title: "Property Buying",
-              desc: "Assistance in buying residential and commercial properties hassle-free.",
-            },
-            {
-              icon: <HomeIcon className="w-12 h-12 mx-auto text-teal-500" />,
-              title: "Property Renting",
-              desc: "Find rental homes and offices quickly with verified listings.",
-            },
-            {
-              icon: <StarIcon className="w-12 h-12 mx-auto text-teal-500" />,
-              title: "Premium Support",
-              desc: "Personalized guidance and 24/7 support for every client.",
-            },
-          ].map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, delay: i * 0.2 }}
-              viewport={{ once: true }}
-              className="bg-white shadow-md p-6 rounded-lg text-center hover:shadow-lg transform hover:-translate-y-2 transition"
-            >
-              {item.icon}
-              <h3 className="text-xl font-semibold mt-4">{item.title}</h3>
-              <p className="text-gray-600 mt-2">{item.desc}</p>
-            </motion.div>
-          ))}
+      {/* Why Choose Us Section */}
+      <section className="bg-gray-50 py-20">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-14">
+            Why <span className="text-teal-600">Choose Us?</span>
+          </h2>
+          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                title: "Trusted Experts",
+                desc: "Our team of professionals ensures smooth property transactions with expert guidance.",
+                icon: <ShieldCheck size={32} className="text-teal-600" />,
+              },
+              {
+                title: "Wide Network",
+                desc: "Access premium residential and commercial properties across prime locations.",
+                icon: <Building2 size={32} className="text-teal-600" />,
+              },
+              {
+                title: "Happy Clients",
+                desc: "We’ve helped thousands of clients find their dream home and grow their investments.",
+                icon: <Users size={32} className="text-teal-600" />,
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: i * 0.2 }}
+                viewport={{ once: true }}
+                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition"
+              >
+                <div className="flex justify-center mb-4">{item.icon}</div>
+                <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                <p className="text-gray-600 text-sm">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Call to Action */}
       <section
-        className="relative bg-teal-600 text-white py-16 sm:py-20 text-center"
+        className="relative py-20 text-center text-white"
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1600&q=80')",
+          backgroundImage: `url(${img5})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
+          backgroundAttachment: "fixed",
         }}
       >
         <div className="absolute inset-0 bg-black/70"></div>
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="relative z-10 px-4 sm:px-6"
+          className="relative z-10 px-6"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
-            Ready to find your dream property?
+          <h2 className="text-3xl md:text-5xl font-extrabold">
+            Ready to Find Your Dream Property?
           </h2>
-          <p className="mt-4 text-base sm:text-lg md:text-xl max-w-2xl mx-auto">
-            Join thousands of happy clients who found their perfect home with us.
+          <p className="mt-6 text-lg md:text-xl opacity-90 max-w-2xl mx-auto">
+            Join thousands of satisfied clients who discovered their perfect home
+            with us. Let’s make your dream a reality today.
           </p>
           <Link
             to="/contact"
-            className="mt-6 inline-block bg-white text-teal-600 font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-gray-200 transition transform hover:scale-105"
+            className="mt-8 inline-block px-8 py-3 rounded-full font-semibold bg-teal-600 hover:bg-teal-700 text-white transition"
           >
             Contact Us
           </Link>

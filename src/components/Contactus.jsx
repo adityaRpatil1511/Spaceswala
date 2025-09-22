@@ -3,15 +3,16 @@ import { Mail, Phone, MapPin, Send } from "lucide-react";
 
 const Contactus = () => {
   return (
-    <section className="relative bg-gradient-to-br from-[#F5F7FA] to-[#E4E9F0] text-gray-900 py-20 px-6 lg:px-20 min-h-[90vh] overflow-hidden">
-      
+    <section
+      id="contact"
+      className="relative bg-gradient-to-br from-[#F5F7FA] to-[#E4E9F0] text-gray-900 py-20 px-6 lg:px-20 min-h-[90vh] overflow-hidden"
+    >
       {/* Background shapes */}
       <div className="absolute -top-32 -left-32 w-96 h-96 bg-teal-200 opacity-20 rounded-full blur-3xl"></div>
       <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-blue-200 opacity-20 rounded-full blur-3xl"></div>
 
       <div className="relative max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center z-10">
-        
-        {/* Left Info Section */}
+        {/* Left Info */}
         <div className="space-y-8">
           <h2 className="text-4xl md:text-5xl font-bold">
             Get in <span className="text-teal-400">Touch</span>
@@ -37,7 +38,7 @@ const Contactus = () => {
           </div>
         </div>
 
-        {/* Right Form Section */}
+        {/* Right Form */}
         <div className="bg-white/60 backdrop-blur-md rounded-3xl p-10 shadow-xl">
           <h3 className="text-2xl font-semibold mb-6 text-gray-900">Send us a Message</h3>
           <form className="space-y-5">
@@ -64,7 +65,6 @@ const Contactus = () => {
             </button>
           </form>
         </div>
-
       </div>
     </section>
   );
